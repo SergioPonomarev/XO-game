@@ -1,5 +1,7 @@
 package io.spono.xo.model;
 
+import io.spono.xo.model.exceptions.AlreadyOccupiedException;
+import io.spono.xo.model.exceptions.InvalidPointException;
 import org.junit.Test;
 
 import java.awt.*;
@@ -16,7 +18,8 @@ public class FieldTest {
     }
 
     @Test
-    public void setFigure() {
+    public void setFigure()
+            throws AlreadyOccupiedException, InvalidPointException {
         final Field field = new Field();
         final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
